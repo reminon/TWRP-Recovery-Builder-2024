@@ -16,7 +16,7 @@ on:
       DEVICE_TREE:
         description: 'Custom Recovery Tree' 
         required: true
-        default: 'https://github.com/kinguser981/cap_sprout_twrp'
+        default: 'https://github.com/reminon/android_device_hiby_R4_EVA'
       DEVICE_TREE_BRANCH:
         description: 'Custom Recovery Tree Branch' 
         required: true
@@ -24,11 +24,11 @@ on:
       DEVICE_PATH:
         description: 'Specify your Device Path' 
         required: true
-        default: 'device/nokia/cap_sprout'
+        default: 'device/hiby/R4_EVA'
       DEVICE_NAME:
         description: 'Specify your Device Codename' 
         required: true
-        default: 'cap_sprout'
+        default: 'R4_EVA'
       BUILD_TARGET:
         description: 'Specify your Build Target' 
         required: true
@@ -120,8 +120,8 @@ jobs:
       run: |
         mkdir workspace
         cd workspace
-        git config --global user.name "Samuel Kendall"
-        git config --global user.email "kinguser981@gmail.com"
+        git config --global user.name reminon
+        git config --global user.email reminon@gmail.com
         repo init --depth=1 -u ${{ steps.manifest.outputs.value }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
   
     - name: Repo Sync
